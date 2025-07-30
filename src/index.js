@@ -10,6 +10,8 @@ const HTML_CONTENT = `<!DOCTYPE html>
     <title>Paste - Pastebin Alternative</title>
     <meta name="description" content="Paste - A fast, secure, and anonymous pastebin alternative with syntax highlighting">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" sizes="32x32" href="/favicon-32x32.svg">
     <link rel="manifest" href="/manifest.json">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
@@ -598,6 +600,65 @@ export default {
                 }
             });
         }
+
+        // Serve favicon files
+        if (path === '/favicon.ico' || path === '/favicon.svg') {
+            // SVG favicon with clipboard icon
+            const svgContent = `<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <rect width="32" height="32" fill="#000000"/>
+  <rect x="8" y="10" width="16" height="18" rx="2" fill="#fbbf24"/>
+  <rect x="12" y="6" width="8" height="6" rx="1" fill="#ffffff"/>
+  <rect x="14" y="8" width="4" height="2" rx="0.5" fill="#000000"/>
+  <rect x="11" y="14" width="10" height="1.5" fill="#000000"/>
+  <rect x="11" y="17" width="8" height="1.5" fill="#000000"/>
+  <rect x="11" y="20" width="10" height="1.5" fill="#000000"/>
+  <rect x="11" y="23" width="6" height="1.5" fill="#000000"/>
+</svg>`;
+            return new Response(svgContent, {
+                headers: {
+                    'Content-Type': path === '/favicon.ico' ? 'image/svg+xml' : 'image/svg+xml',
+                    'Cache-Control': 'public, max-age=31536000'
+                }
+            });
+        }
+
+        if (path === '/favicon.svg') {
+            const svgContent = `<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <rect width="32" height="32" fill="#000000"/>
+  <rect x="8" y="10" width="16" height="18" rx="2" fill="#fbbf24"/>
+  <rect x="12" y="6" width="8" height="6" rx="1" fill="#ffffff"/>
+  <rect x="14" y="8" width="4" height="2" rx="0.5" fill="#000000"/>
+  <rect x="11" y="14" width="10" height="1.5" fill="#000000"/>
+  <rect x="11" y="17" width="8" height="1.5" fill="#000000"/>
+  <rect x="11" y="20" width="10" height="1.5" fill="#000000"/>
+  <rect x="11" y="23" width="6" height="1.5" fill="#000000"/>
+</svg>`;
+            return new Response(svgContent, {
+                headers: {
+                    'Content-Type': 'image/svg+xml',
+                    'Cache-Control': 'public, max-age=31536000'
+                }
+            });
+        }
+
+        if (path === '/favicon-32x32.svg') {
+            const svgContent = `<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <rect width="32" height="32" fill="#000"/>
+  <rect x="8" y="10" width="16" height="18" rx="2" fill="#fbbf24"/>
+  <rect x="12" y="6" width="8" height="6" rx="1" fill="#fff"/>
+  <rect x="14" y="8" width="4" height="2" fill="#000"/>
+  <rect x="11" y="14" width="10" height="1" fill="#000"/>
+  <rect x="11" y="17" width="8" height="1" fill="#000"/>
+  <rect x="11" y="20" width="10" height="1" fill="#000"/>
+  <rect x="11" y="23" width="6" height="1" fill="#000"/>
+</svg>`;
+            return new Response(svgContent, {
+                headers: {
+                    'Content-Type': 'image/svg+xml',
+                    'Cache-Control': 'public, max-age=31536000'
+                }
+            });
+        }
         
         if (path === '/manifest.json') {
             const manifest = {
@@ -610,9 +671,14 @@ export default {
                 theme_color: '#fbbf24',
                 icons: [
                     {
-                        src: '/favicon.ico',
+                        src: '/favicon.svg',
+                        sizes: 'any',
+                        type: 'image/svg+xml'
+                    },
+                    {
+                        src: '/favicon-32x32.svg',
                         sizes: '32x32',
-                        type: 'image/x-icon'
+                        type: 'image/svg+xml'
                     }
                 ]
             };
