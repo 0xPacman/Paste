@@ -7,8 +7,8 @@ const HTML_CONTENT = `<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QuickPaste - Fast & Secure Pastebin</title>
-    <meta name="description" content="QuickPaste - A fast, secure, and anonymous pastebin service with syntax highlighting">
+    <title>Paste - Pastebin Alternative</title>
+    <meta name="description" content="Paste - A fast, secure, and anonymous pastebin alternative with syntax highlighting">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="manifest" href="/manifest.json">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -50,7 +50,7 @@ const HTML_CONTENT = `<!DOCTYPE html>
         
         /* Animated gradient background */
         .animated-bg {
-            background: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #f5576c);
+            background: linear-gradient(-45deg, #000000, #1a1a1a, #2d2d2d, #1f1f1f);
             background-size: 400% 400%;
             animation: gradient 15s ease infinite;
         }
@@ -65,7 +65,7 @@ const HTML_CONTENT = `<!DOCTYPE html>
         .loading {
             border: 2px solid rgba(255, 255, 255, 0.3);
             border-radius: 50%;
-            border-top: 2px solid #fff;
+            border-top: 2px solid #fbbf24;
             width: 20px;
             height: 20px;
             animation: spin 1s linear infinite;
@@ -82,12 +82,12 @@ const HTML_CONTENT = `<!DOCTYPE html>
         <!-- Header -->
         <header class="text-center mb-8">
             <h1 class="text-4xl md:text-6xl font-bold mb-4">
-                <span class="bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">
-                    QuickPaste
+                <span class="bg-gradient-to-r from-yellow-400 to-white bg-clip-text text-transparent">
+                    Paste
                 </span>
             </h1>
-            <p class="text-lg md:text-xl text-gray-200 mb-2">Fast, Secure & Anonymous Pastebin</p>
-            <p class="text-sm text-gray-300">Share code, text, and documents instantly</p>
+            <p class="text-lg md:text-xl text-gray-200 mb-2">Fast & Secure Pastebin Alternative</p>
+            <p class="text-sm text-yellow-300">Share code, text, and documents instantly</p>
         </header>
 
         <!-- Main Content -->
@@ -110,7 +110,7 @@ const HTML_CONTENT = `<!DOCTYPE html>
                             id="title" 
                             name="title" 
                             placeholder="Enter a title for your paste..."
-                            class="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent placeholder-gray-300 text-white"
+                            class="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent placeholder-gray-300 text-white"
                         >
                     </div>
 
@@ -120,7 +120,7 @@ const HTML_CONTENT = `<!DOCTYPE html>
                         <select 
                             id="language" 
                             name="language"
-                            class="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent text-white"
+                            class="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent text-white"
                         >
                             <option value="plaintext">Plain Text</option>
                             <option value="javascript">JavaScript</option>
@@ -151,7 +151,7 @@ const HTML_CONTENT = `<!DOCTYPE html>
                             name="content" 
                             rows="12" 
                             placeholder="Paste your code or text here..."
-                            class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent placeholder-gray-300 text-white font-mono text-sm resize-y"
+                            class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent placeholder-gray-300 text-white font-mono text-sm resize-y"
                             required
                         ></textarea>
                     </div>
@@ -162,7 +162,7 @@ const HTML_CONTENT = `<!DOCTYPE html>
                         <select 
                             id="expiration" 
                             name="expiration"
-                            class="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent text-white"
+                            class="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent text-white"
                         >
                             <option value="never">Never</option>
                             <option value="1h">1 Hour</option>
@@ -176,7 +176,7 @@ const HTML_CONTENT = `<!DOCTYPE html>
                     <button 
                         type="submit" 
                         id="submitBtn"
-                        class="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 focus:ring-offset-transparent disabled:opacity-50 disabled:cursor-not-allowed"
+                        class="w-full bg-gradient-to-r from-yellow-500 to-yellow-400 hover:from-yellow-600 hover:to-yellow-500 text-black font-semibold py-3 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 focus:ring-offset-transparent disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                         <span id="submitText">Create Paste</span>
                         <div id="submitLoading" class="loading mx-auto hidden"></div>
@@ -189,8 +189,8 @@ const HTML_CONTENT = `<!DOCTYPE html>
                 <h2 class="text-2xl font-semibold mb-4">Features</h2>
                 <div class="grid md:grid-cols-3 gap-4">
                     <div class="text-center">
-                        <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-2">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div class="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                            <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                             </svg>
                         </div>
@@ -198,8 +198,8 @@ const HTML_CONTENT = `<!DOCTYPE html>
                         <p class="text-sm text-gray-300">Powered by Cloudflare Workers</p>
                     </div>
                     <div class="text-center">
-                        <div class="w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center mx-auto mb-2">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto mb-2">
+                            <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
                             </svg>
                         </div>
@@ -207,8 +207,8 @@ const HTML_CONTENT = `<!DOCTYPE html>
                         <p class="text-sm text-gray-300">No registration required</p>
                     </div>
                     <div class="text-center">
-                        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-2">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center mx-auto mb-2">
+                            <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
                             </svg>
                         </div>
@@ -221,7 +221,8 @@ const HTML_CONTENT = `<!DOCTYPE html>
 
         <!-- Footer -->
         <footer class="text-center mt-12 text-gray-400">
-            <p>&copy; 2024 QuickPaste. Powered by Cloudflare Workers.</p>
+            <p>&copy; 2024 Paste. Powered by Cloudflare Workers.</p>
+            <p class="text-sm mt-2">Made by <a href="https://0xpacman.com" target="_blank" class="text-yellow-400 hover:text-yellow-300 transition-colors">0xPacman</a></p>
         </footer>
 
         <!-- Success Modal -->
@@ -244,7 +245,7 @@ const HTML_CONTENT = `<!DOCTYPE html>
                         >
                         <button 
                             id="copyUrlBtn"
-                            class="bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded text-sm transition duration-200"
+                            class="bg-yellow-500 hover:bg-yellow-600 text-black px-4 py-2 rounded text-sm transition duration-200"
                         >
                             Copy
                         </button>
@@ -252,7 +253,7 @@ const HTML_CONTENT = `<!DOCTYPE html>
                     <div class="flex space-x-2">
                         <button 
                             id="viewPasteBtn"
-                            class="flex-1 bg-green-500 hover:bg-green-600 text-white py-2 rounded transition duration-200"
+                            class="flex-1 bg-yellow-500 hover:bg-yellow-600 text-black py-2 rounded transition duration-200"
                         >
                             View Paste
                         </button>
@@ -429,8 +430,8 @@ function generatePasteHTML(paste, createdDate, expiresDate) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${paste.title} - QuickPaste</title>
-    <meta name="description" content="QuickPaste - ${paste.title}">
+    <title>${paste.title} - Paste</title>
+    <meta name="description" content="Paste - ${paste.title}">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
@@ -462,7 +463,7 @@ function generatePasteHTML(paste, createdDate, expiresDate) {
         }
         
         .animated-bg {
-            background: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #f5576c);
+            background: linear-gradient(-45deg, #000000, #1a1a1a, #2d2d2d, #1f1f1f);
             background-size: 400% 400%;
             animation: gradient 15s ease infinite;
         }
@@ -479,11 +480,11 @@ function generatePasteHTML(paste, createdDate, expiresDate) {
         <!-- Header -->
         <header class="mb-6">
             <div class="flex items-center justify-between flex-wrap gap-4">
-                <a href="/" class="text-2xl font-bold bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent hover:opacity-80 transition-opacity">
-                    ← QuickPaste
+                <a href="/" class="text-2xl font-bold bg-gradient-to-r from-yellow-400 to-white bg-clip-text text-transparent hover:opacity-80 transition-opacity">
+                    ← Paste
                 </a>
                 <div class="flex space-x-2">
-                    <button id="copyBtn" class="bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded-lg transition duration-200 flex items-center space-x-2">
+                    <button id="copyBtn" class="bg-yellow-500 hover:bg-yellow-600 text-black px-4 py-2 rounded-lg transition duration-200 flex items-center space-x-2">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
                         </svg>
@@ -503,10 +504,10 @@ function generatePasteHTML(paste, createdDate, expiresDate) {
                 <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
                     <h1 class="text-2xl font-bold">${paste.title}</h1>
                     <div class="flex flex-wrap gap-4 text-sm text-gray-300">
-                        <span>Language: <span class="text-purple-300">${paste.language}</span></span>
-                        <span>Views: <span class="text-blue-300">${paste.views}</span></span>
-                        <span>Created: <span class="text-green-300">${createdDate}</span></span>
-                        <span>Expires: <span class="text-yellow-300">${expiresDate}</span></span>
+                        <span>Language: <span class="text-yellow-300">${paste.language}</span></span>
+                        <span>Views: <span class="text-white">${paste.views}</span></span>
+                        <span>Created: <span class="text-yellow-400">${createdDate}</span></span>
+                        <span>Expires: <span class="text-gray-300">${expiresDate}</span></span>
                     </div>
                 </div>
                 
@@ -519,7 +520,8 @@ function generatePasteHTML(paste, createdDate, expiresDate) {
 
         <!-- Footer -->
         <footer class="text-center mt-8 text-gray-400">
-            <p>&copy; 2024 QuickPaste. Powered by Cloudflare Workers.</p>
+            <p>&copy; 2024 Paste. Powered by Cloudflare Workers.</p>
+            <p class="text-sm mt-2">Made by <a href="https://0xpacman.com" target="_blank" class="text-yellow-400 hover:text-yellow-300 transition-colors">0xPacman</a></p>
         </footer>
     </div>
 
@@ -537,12 +539,12 @@ function generatePasteHTML(paste, createdDate, expiresDate) {
                     await navigator.clipboard.writeText(pasteContent.textContent);
                     copyBtn.innerHTML = '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Copied!</span>';
                     copyBtn.classList.add('bg-green-500');
-                    copyBtn.classList.remove('bg-purple-500', 'hover:bg-purple-600');
+                    copyBtn.classList.remove('bg-yellow-500', 'hover:bg-yellow-600');
                     
                     setTimeout(() => {
                         copyBtn.innerHTML = '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg><span>Copy</span>';
                         copyBtn.classList.remove('bg-green-500');
-                        copyBtn.classList.add('bg-purple-500', 'hover:bg-purple-600');
+                        copyBtn.classList.add('bg-yellow-500', 'hover:bg-yellow-600');
                     }, 2000);
                 } catch (error) {
                     // Fallback for older browsers
@@ -599,13 +601,13 @@ export default {
         
         if (path === '/manifest.json') {
             const manifest = {
-                name: 'QuickPaste',
-                short_name: 'QuickPaste',
-                description: 'Fast, Secure & Anonymous Pastebin',
+                name: 'Paste',
+                short_name: 'Paste',
+                description: 'Fast, Secure & Anonymous Pastebin Alternative',
                 start_url: '/',
                 display: 'standalone',
-                background_color: '#667eea',
-                theme_color: '#667eea',
+                background_color: '#000000',
+                theme_color: '#fbbf24',
                 icons: [
                     {
                         src: '/favicon.ico',
