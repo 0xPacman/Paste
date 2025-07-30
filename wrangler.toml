@@ -3,7 +3,7 @@ main = "src/index.js"
 compatibility_date = "2024-01-01"
 
 [[kv_namespaces]]
-binding = "PASTES_KV"
+binding = "PASTE_KV"
 id = "88f842a706994b9fbd9431d7b73a2d44"
 preview_id = "88f842a706994b9fbd9431d7b73a2d44"
 
@@ -11,5 +11,5 @@ preview_id = "88f842a706994b9fbd9431d7b73a2d44"
 name = "paste"
 
 [[env.production.kv_namespaces]]
-binding = "PASTES_KV"
+binding = "PASTE_KV"
 id = "88f842a706994b9fbd9431d7b73a2d44"
