@@ -223,8 +223,7 @@ const HTML_CONTENT = `<!DOCTYPE html>
 
         <!-- Footer -->
         <footer class="text-center mt-12 text-gray-400">
-            <p>&copy; 2024 Paste. Powered by Cloudflare Workers.</p>
-            <p class="text-sm mt-2">Made by <a href="https://0xpacman.com" target="_blank" class="text-yellow-400 hover:text-yellow-300 transition-colors">0xPacman</a></p>
+            <p class="text-sm">Made by <a href="https://0xpacman.com" target="_blank" class="text-yellow-400 hover:text-yellow-300 transition-colors">0xPacman</a></p>
         </footer>
 
         <!-- Success Modal -->
@@ -522,8 +521,7 @@ function generatePasteHTML(paste, createdDate, expiresDate) {
 
         <!-- Footer -->
         <footer class="text-center mt-8 text-gray-400">
-            <p>&copy; 2024 Paste. Powered by Cloudflare Workers.</p>
-            <p class="text-sm mt-2">Made by <a href="https://0xpacman.com" target="_blank" class="text-yellow-400 hover:text-yellow-300 transition-colors">0xPacman</a></p>
+            <p class="text-sm">Made by <a href="https://0xpacman.com" target="_blank" class="text-yellow-400 hover:text-yellow-300 transition-colors">0xPacman</a></p>
         </footer>
     </div>
 
