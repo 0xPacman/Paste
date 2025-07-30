@@ -2,9 +2,6 @@ name = "paste"
 compatibility_date = "2024-01-01"
 pages_build_output_dir = "public"
 
-[observability.logs]
-enabled = true
-
 [[kv_namespaces]]
 binding = "PASTES_KV"
 id = "88f842a706994b9fbd9431d7b73a2d44"
