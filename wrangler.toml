@@ -5,10 +5,11 @@ pages_build_output_dir = "public"
 [[kv_namespaces]]
 binding = "PASTES_KV"
 id = "88f842a706994b9fbd9431d7b73a2d44"
+preview_id = "88f842a706994b9fbd9431d7b73a2d44"
 
 [env.production]
 name = "paste-platform"
 
 [[env.production.kv_namespaces]]
 binding = "PASTES_KV"
-id = "your-production-kv-namespace-id"
+id = "88f842a706994b9fbd9431d7b73a2d44"
