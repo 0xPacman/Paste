@@ -1,0 +1,32 @@
+{
+  "name": "quickpaste-platform",
+  "version": "1.0.0",
+  "description": "A modern, serverless Pastebin platform built with Cloudflare Pages",
+  "main": "public/index.html",
+  "scripts": {
+    "dev": "wrangler pages dev public --kv PASTES_KV",
+    "deploy": "wrangler pages deploy public",
+    "preview": "wrangler pages dev public --kv PASTES_KV --local",
+    "build": "echo 'No build step required for static site'",
+    "test": "echo 'No tests specified'"
+  },
+  "keywords": [
+    "pastebin",
+    "cloudflare",
+    "serverless",
+    "paste",
+    "code-sharing"
+  ],
+  "author": "0xPacman",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/0xPacman/Paste.git"
+  },
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

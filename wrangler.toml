@@ -1,0 +1,15 @@
+name = "paste-platform"
+compatibility_date = "2024-01-01"
+pages_build_output_dir = "public"
+
+[[kv_namespaces]]
+binding = "PASTES_KV"
+id = "your-kv-namespace-id"
+preview_id = "your-preview-kv-namespace-id"
+
+[env.production]
+name = "paste-platform"
+
+[[env.production.kv_namespaces]]
+binding = "PASTES_KV"
+id = "your-production-kv-namespace-id"

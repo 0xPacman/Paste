@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Allow all search engines to index the main page
+# Individual pastes are also allowed for discoverability
+
+Sitemap: https://paste.0xpacman.com/sitemap.xml
