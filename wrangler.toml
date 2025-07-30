@@ -2,11 +2,6 @@ name = "paste"
 main = "src/index.js"
 compatibility_date = "2024-01-01"
 
-# Custom domain configuration
-[[route]]
-pattern = "paste.0xpacman.com/*"
-custom_domain = true
-
 [[kv_namespaces]]
 binding = "PASTE_KV"
 id = "88f842a706994b9fbd9431d7b73a2d44"
@@ -14,7 +9,6 @@ preview_id = "88f842a706994b9fbd9431d7b73a2d44"
 
 [env.production]
 name = "paste"
-route = "paste.0xpacman.com/*"
 
 [[env.production.kv_namespaces]]
 binding = "PASTE_KV"
