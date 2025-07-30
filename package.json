@@ -1,13 +1,13 @@
 {
   "name": "quickpaste-platform",
   "version": "1.0.0",
-  "description": "A modern, serverless Pastebin platform built with Cloudflare Pages",
-  "main": "public/index.html",
+  "description": "A modern, serverless Pastebin platform built with Cloudflare Workers",
+  "main": "src/index.js",
   "scripts": {
-    "dev": "wrangler pages dev public --kv PASTES_KV",
-    "deploy": "wrangler pages deploy public",
-    "preview": "wrangler pages dev public --kv PASTES_KV --local",
-    "build": "echo 'No build step required for static site'",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "preview": "wrangler dev --local",
+    "build": "echo 'No build step required for Workers'",
     "test": "echo 'No tests specified'"
   },
   "keywords": [
