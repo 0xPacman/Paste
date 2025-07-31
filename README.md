@@ -1,4 +1,4 @@
-# 📋 Paste- **🌈 Syntax Highlighting**: Support for 18+ programming languages with highlight.js
+# 📋 Paste- **Syntax Highlighting**: Support for 18+ programming languages with highlight.js
 - **📱 Mobile Friendly**: Fully responsive design that works on all devices
 - **📋 One-Click Copy**: Easy copy-to-clipboard functionality
 - **⏰ Custom Expiration**: Choose from never, 1 hour, 1 day, 1 week, or 1 month
