@@ -246,8 +246,53 @@ class PasteViewer {
     }
 }
 
+// Advertisement Management
+class AdManager {
+    constructor() {
+        this.init();
+    }
+
+    init() {
+        this.createAdSpace();
+        this.loadAdScript();
+    }
+
+    createAdSpace() {
+        // Create the ad container element
+        const adContainer = document.createElement('div');
+        adContainer.className = 'container mx-auto px-4 py-6';
+        adContainer.innerHTML = `
+            <div class="max-w-4xl mx-auto text-center">
+                <div id="container-b7fd22dc45f39238dca50579277adda3"></div>
+            </div>
+        `;
+
+        // Insert the ad space between main content and footer
+        const main = document.querySelector('main');
+        const footer = document.querySelector('footer');
+        
+        if (main && footer) {
+            footer.parentNode.insertBefore(adContainer, footer);
+        }
+    }
+
+    loadAdScript() {
+        // Create and load the ad script
+        const script = document.createElement('script');
+        script.async = true;
+        script.setAttribute('data-cfasync', 'false');
+        script.src = '//pl27310161.profitableratecpm.com/b7fd22dc45f39238dca50579277adda3/invoke.js';
+        
+        // Add script to head
+        document.head.appendChild(script);
+    }
+}
+
 // Initialize based on page type
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize advertisement manager
+    new AdManager();
+    
     if (document.getElementById('pasteForm')) {
         // Main page - initialize paste creation
         new QuickPaste();
